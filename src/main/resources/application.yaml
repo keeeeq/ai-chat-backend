@@ -4,11 +4,11 @@ spring:
     name: heimaai
   ai:
      openai:
-        api-key: sk-5jWTdN7jgSuQ9GFL1f101870C71746E688D105A900417d5e
-        base-url: http://182.92.194.16:3000
+        api-key: your-api-key
+        base-url: your-base-url
         chat:
           options:
-            model: Spark-4.0-Ultra
+            model: your-model
 server:
   port: 8082
 logging:
