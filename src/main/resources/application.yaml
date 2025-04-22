@@ -1,0 +1,19 @@
+spring:
+  application:
+
+    name: heimaai
+  ai:
+     openai:
+        api-key: sk-5jWTdN7jgSuQ9GFL1f101870C71746E688D105A900417d5e
+        base-url: http://182.92.194.16:3000
+        chat:
+          options:
+            model: Spark-4.0-Ultra
+server:
+  port: 8082
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.example.ai: debug
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
