@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.library</groupId>
-	<artifactId>heimaai</artifactId>
+	<artifactId>chatai</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>heimaai</name>
 	<description>heimaai</description>
