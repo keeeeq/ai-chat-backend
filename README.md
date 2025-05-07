@@ -1,5 +1,9 @@
 **前端部分：https://github.com/keeeeq/ai-chat-frontend**
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8cf5c9ea3d7ae719cf7b8a815138b7239ac03fff
 # Chat-AI 聊天应用
 
 ## 项目介绍
