@@ -21,7 +21,6 @@ public class MessageVO {
                 this.role="";
                 break;
         }
-
         this.content =message.getText();
     }
 }
