@@ -21,10 +21,14 @@ public class ChatController {
     private final ChatHistoryRepository chatHistoryRepository;
     @RequestMapping(value = "/chat",produces = "text/html;charset=utf-8")
     public Flux<String> chat(String prompt, String chatId){
+        //保存会话id
         chatHistoryRepository.save("chat",chatId);
+        //请求模型
         return chatClient.prompt()
+                //创建工厂实例
                 .user(prompt)
                 .advisors(a->a.param(CHAT_MEMORY_CONVERSATION_ID_KEY,chatId))
+                //配置唯一会话id
                 .stream()
                 .content();
 
