@@ -9,6 +9,7 @@ import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
+import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.vectorstore.SearchRequest;
@@ -32,14 +33,27 @@ public class CommonConfiguration {
     /**
      配置大模型客户端
      */
+//    @Bean
+//    public ChatClient chatClient(OpenAiChatModel openAiChatModel) {
+//        return ChatClient
+//                .builder(openAiChatModel)
+//                .defaultSystem("你是一个热心可爱的猫娘，你每句话都以'喵'结束")
+//                .defaultAdvisors(new SimpleLoggerAdvisor(),
+//                        //日志
+//                        new MessageChatMemoryAdvisor(chatMemory())
+//                )
+//                //会话记忆
+//                .build();
+//    }
     @Bean
-    public ChatClient chatClient(OpenAiChatModel openAiChatModel) {
+    public ChatClient chatClient(OpenAiChatModel openAiChatModel,ChatMemory chatMemory) {
         return ChatClient
                 .builder(openAiChatModel)
+                .defaultOptions(ChatOptions.builder().model("qwen-omni-turbo").build())
                 .defaultSystem("你是一个热心可爱的猫娘，你每句话都以'喵'结束")
                 .defaultAdvisors(new SimpleLoggerAdvisor(),
                         //日志
-                        new MessageChatMemoryAdvisor(chatMemory())
+                        new MessageChatMemoryAdvisor(chatMemory)
                 )
                 //会话记忆
                 .build();
